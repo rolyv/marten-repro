@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgres-master:
+    image: postgres:15
+    container_name: postgres-master
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - master_data:/var/lib/postgresql/data
+      - ./master_init:/docker-entrypoint-initdb.d
+
+  postgres-replica:
+    image: postgres:15
+    container_name: postgres-replica
+    depends_on:
+      - postgres-master
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5433:5432'
+    volumes:
+      - replica_data:/var/lib/postgresql/data
+    entrypoint: [ "bash", "-c" ]
+    command: >
+      "chown -R postgres:postgres /var/lib/postgresql && \
+      chmod 700 /var/lib/postgresql/data && \
+      gosu postgres bash -c '
+        until pg_isready -h postgres-master -p 5432; do
+          echo \"Waiting for master to be ready...\";
+          sleep 2;
+        done;
+        rm -rf /var/lib/postgresql/data/*;
+        pg_basebackup -h postgres-master -D /var/lib/postgresql/data -U replicator -v -P --wal-method=stream -R;
+        exec postgres
+      '"
+    user: root
+
+volumes:
+  master_data:
+  replica_data:

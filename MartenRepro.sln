@@ -1,0 +1,27 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartenRepro.ApiService", "MartenRepro.ApiService\MartenRepro.ApiService.csproj", "{87196979-793D-4869-BF99-AB0104D3F6D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartenRepro.ServiceDefaults", "MartenRepro.ServiceDefaults\MartenRepro.ServiceDefaults.csproj", "{16315797-B9A9-4E20-9F25-83B43FE8A79B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartenRepro.AppHost", "MartenRepro.AppHost\MartenRepro.AppHost.csproj", "{289E8C12-0E95-4442-A5E9-902906770741}"
+EndProject
+Global
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87196979-793D-4869-BF99-AB0104D3F6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87196979-793D-4869-BF99-AB0104D3F6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87196979-793D-4869-BF99-AB0104D3F6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87196979-793D-4869-BF99-AB0104D3F6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{289E8C12-0E95-4442-A5E9-902906770741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{289E8C12-0E95-4442-A5E9-902906770741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{289E8C12-0E95-4442-A5E9-902906770741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{289E8C12-0E95-4442-A5E9-902906770741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16315797-B9A9-4E20-9F25-83B43FE8A79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16315797-B9A9-4E20-9F25-83B43FE8A79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16315797-B9A9-4E20-9F25-83B43FE8A79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16315797-B9A9-4E20-9F25-83B43FE8A79B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+EndGlobal
